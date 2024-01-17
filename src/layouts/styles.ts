@@ -11,6 +11,6 @@ export const OutletContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 0 auto 10rem;
   padding: 0 2rem;
 `
