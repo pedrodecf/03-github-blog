@@ -11,7 +11,32 @@ export const ProfileContainer = styled.div`
   box-shadow: 0px 2px 28px 0px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 9999;
+
+  .loadingBar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `
+
+export const ProfileContent = styled.div`
+  width: 100%;
+  background-color: ${(props) => props.theme.profile};
+  display: flex;
+  gap: 2rem;
+  animation: fade-in 0.4s;
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+`
+
 export const ImgContainer = styled.div`
   img {
     width: 9.25rem;
@@ -26,15 +51,6 @@ export const InfoContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    p {
-      display: inline-block;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-    }
 
     a {
       color: ${(props) => props.theme.blue};
@@ -71,6 +87,13 @@ export const InfoContainer = styled.div`
     font-weight: 400;
     line-height: 160%;
     margin-bottom: 1.5rem;
+
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
   span {

@@ -25,7 +25,7 @@ export function UserProvider({ children }: UserProviderProps) {
   const [user, setUser] = useState<UserProps>({})
   useEffect(() => {
     api.get('https://api.github.com/users/pedrodecf').then(function (response) {
-      setUser(response.data)
+      setTimeout(() => setUser(response.data), 1000)
     })
   }, [])
 
