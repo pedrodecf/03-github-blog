@@ -32,12 +32,21 @@ export const PostTitleContainer = styled.div`
   column-gap: 0.25rem;
   align-items: start;
 
+  a {
+    text-decoration: none;
+  }
+
   h2 {
     color: ${(props) => props.theme.title};
     font-family: Nunito;
     font-size: 1.25rem;
     font-weight: 700;
     line-height: 160%;
+
+    &:hover {
+      color: ${(props) => props.theme.blue};
+      transition: color 0.2s ease;
+    }
   }
 
   span {

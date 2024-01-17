@@ -1,10 +1,13 @@
 import { PostContainer, PostTitleContainer } from './styles'
+import { Link } from 'react-router-dom'
 
 export function Post() {
   return (
     <PostContainer>
       <PostTitleContainer>
-        <h2>JavaScript data types and data structures</h2>
+        <Link to={'view/1'}>
+          <h2>JavaScript data types and data structures</h2>
+        </Link>
         <span>Há 1 dia</span>
       </PostTitleContainer>
       <p>

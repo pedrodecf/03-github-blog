@@ -6,15 +6,16 @@ import {
   GithubLogo,
 } from '@phosphor-icons/react'
 import { PostContainer, InfoContainer, PostInfoContainer } from './styles'
+import { Link } from 'react-router-dom'
 
 export function PostInfo() {
   return (
     <PostContainer>
       <InfoContainer>
         <div className="firstLineContainer">
-          <a href="/">
+          <Link to={'/'}>
             <CaretLeft size={12} weight="bold" /> VOLTAR
-          </a>
+          </Link>
           <a href="https://github.com/pedrodecf">
             VER NO GITHUB <ArrowSquareOut size={12} weight="bold" />
           </a>

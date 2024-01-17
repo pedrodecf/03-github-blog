@@ -9,6 +9,8 @@ export const PostContainer = styled.div`
   gap: 2rem;
   margin-top: -6rem;
   box-shadow: 0px 2px 28px 0px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 9999;
 `
 
 export const InfoContainer = styled.div`
