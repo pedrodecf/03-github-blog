@@ -18,6 +18,26 @@ export const ImgContainer = styled.div`
 `
 
 export const InfoContainer = styled.div`
+  .firstLineContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      color: ${(props) => props.theme.blue};
+      font-family: Nunito;
+      font-size: 0.75rem;
+      font-weight: 700;
+      line-height: 160%;
+      text-transform: uppercase;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
   h1 {
     color: ${(props) => props.theme.title};
     font-family: Nunito;
