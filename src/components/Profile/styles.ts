@@ -21,10 +21,20 @@ export const ImgContainer = styled.div`
 `
 
 export const InfoContainer = styled.div`
+  width: 100%;
   .firstLineContainer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    p {
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
 
     a {
       color: ${(props) => props.theme.blue};

@@ -10,39 +10,40 @@ import {
   InfoContainer,
   UserInfoContainer,
 } from './styles'
+import { useContext } from 'react'
+import { UserContext } from '../../context/UserContext'
 
 export function Profile() {
+  const { user } = useContext(UserContext)
+  console.log(user)
   return (
     <ProfileContainer>
       <ImgContainer>
-        <img src="https://github.com/pedrodecf.png" alt="" />
+        <img src={user.avatar_url} alt="" />
       </ImgContainer>
       <InfoContainer>
         <div className="firstLineContainer">
-          <h1>Pedro Henrique</h1>
-          <a href="https://github.com/pedrodecf">
+          <h1>{user.name}</h1>
+          <a href={`https://github.com/${user.login}`}>
             GITHUB <ArrowSquareOut size={12} weight="bold" />
           </a>
         </div>
-        <p>
-          Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-          viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat
-          pulvinar vel mass.
-        </p>
+        <p>{user.bio}</p>
         <UserInfoContainer>
           <span>
             <GithubLogo size={18} />
-            pedrodecf
+            {user.login}
           </span>
-
-          <span>
-            <Buildings size={18} />
-            Rocketseat
-          </span>
+          {user.company !== undefined ?? (
+            <span>
+              <Buildings size={18} />
+              {user.company}
+            </span>
+          )}
 
           <span>
             <UserList size={18} />
-            32 seguidores
+            {user.followers} {user.followers === 1 ? 'seguidor' : 'seguidores'}
           </span>
         </UserInfoContainer>
       </InfoContainer>

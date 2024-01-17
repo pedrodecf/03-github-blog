@@ -7,8 +7,11 @@ import {
 } from '@phosphor-icons/react'
 import { PostContainer, InfoContainer, PostInfoContainer } from './styles'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { UserContext } from '../../context/UserContext'
 
 export function PostInfo() {
+  const { user } = useContext(UserContext)
   return (
     <PostContainer>
       <InfoContainer>
@@ -24,7 +27,7 @@ export function PostInfo() {
         <PostInfoContainer>
           <span>
             <GithubLogo size={18} />
-            pedrodecf
+            {user.login}
           </span>
 
           <span>
