@@ -3,7 +3,11 @@ import styled from 'styled-components'
 export const HeaderContainer = styled.header`
   width: 100%;
   height: 18.5rem;
-  background-color: ${(props) => props.theme.profile};
+  background: linear-gradient(
+    180deg,
+    rgba(11, 27, 43, 1) 0%,
+    rgba(12, 33, 54, 1) 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,6 +26,6 @@ export const HeaderContainer = styled.header`
   }
 
   #logo {
-    margin-bottom: 2.38rem;
+    margin-bottom: 6rem;
   }
 `
