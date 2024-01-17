@@ -17,7 +17,6 @@ import { ThreeDots } from 'react-loader-spinner'
 
 export function Profile() {
   const { user } = useContext(UserContext)
-  console.log(user)
   return (
     <ProfileContainer>
       {Object.keys(user).length === 0 ? (

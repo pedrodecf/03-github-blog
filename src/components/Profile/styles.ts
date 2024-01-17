@@ -25,16 +25,6 @@ export const ProfileContent = styled.div`
   background-color: ${(props) => props.theme.profile};
   display: flex;
   gap: 2rem;
-  animation: fade-in 0.4s;
-
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
 `
 
 export const ImgContainer = styled.div`
