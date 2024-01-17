@@ -11,6 +11,21 @@ export const PostContainer = styled.div`
   box-shadow: 0px 2px 28px 0px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 9999;
+
+  .loadingBar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`
+
+export const PostContent = styled.div`
+  width: 100%;
+  background-color: ${(props) => props.theme.profile};
+  display: flex;
+  gap: 2rem;
+  animation: fade-in 0.2s ease-in;
 `
 
 export const InfoContainer = styled.div`
