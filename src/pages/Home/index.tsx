@@ -1,7 +1,18 @@
+import { Post } from '../../components/Post'
+import { Profile } from '../../components/Profile'
+import { SearchBar } from '../../components/SearchBar'
+import { HomeContainer, PostsContainer } from './styles'
+
 export function Home() {
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <HomeContainer>
+      <Profile />
+      <SearchBar />
+      <PostsContainer>
+        <Post />
+        <Post />
+        <Post />
+      </PostsContainer>
+    </HomeContainer>
   )
 }

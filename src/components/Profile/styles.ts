@@ -8,6 +8,7 @@ export const ProfileContainer = styled.div`
   display: flex;
   gap: 2rem;
   margin-top: -6rem;
+  box-shadow: 0px 2px 28px 0px rgba(0, 0, 0, 0.2);
 `
 export const ImgContainer = styled.div`
   img {
@@ -34,6 +35,10 @@ export const InfoContainer = styled.div`
 
       &:hover {
         text-decoration: underline;
+      }
+
+      svg {
+        margin-bottom: -0.15rem;
       }
     }
   }
