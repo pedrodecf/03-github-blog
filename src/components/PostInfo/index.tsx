@@ -12,15 +12,26 @@ import {
   PostContent,
 } from './styles'
 import { Link } from 'react-router-dom'
-import { useContext } from 'react'
-import { UserContext } from '../../context/UserContext'
 import { ThreeDots } from 'react-loader-spinner'
 
-export function PostInfo() {
-  const { user } = useContext(UserContext)
+interface PostInfoProps {
+  title?: string
+  username?: string
+  date?: string
+  comments?: number
+  url?: string
+}
+
+export function PostInfo({
+  title,
+  username,
+  date,
+  comments,
+  url,
+}: PostInfoProps) {
   return (
     <PostContainer>
-      {Object.keys(user).length === 0 ? (
+      {username === undefined ? (
         <div className="loadingBar">
           <ThreeDots
             height="80"
@@ -37,25 +48,25 @@ export function PostInfo() {
               <Link to={'/'}>
                 <CaretLeft size={12} weight="bold" /> VOLTAR
               </Link>
-              <a href="https://github.com/pedrodecf">
+              <a href={url} target="_blank" rel="noreferrer">
                 VER NO GITHUB <ArrowSquareOut size={12} weight="bold" />
               </a>
             </div>
-            <h1>JavaScript data types and data structures</h1>
+            <h1>{title}</h1>
             <PostInfoContainer>
               <span>
                 <GithubLogo size={18} />
-                {user.login}
+                {username}
               </span>
 
               <span>
                 <Calendar size={18} />
-                Há 1 dia
+                {date}
               </span>
 
               <span>
                 <Chat size={18} />
-                32 seguidores
+                {comments} {comments === 1 ? 'comentário' : 'comentários'}
               </span>
             </PostInfoContainer>
           </InfoContainer>
