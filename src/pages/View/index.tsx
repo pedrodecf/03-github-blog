@@ -4,6 +4,8 @@ import { api } from '../../lib/axios'
 import { useParams } from 'react-router-dom'
 import { useState } from 'react'
 import { ThreeDots } from 'react-loader-spinner'
+import Markdown from 'react-markdown'
+import rehypeRaw from 'rehype-raw'
 
 interface ViewPostProps {
   html_url?: string
@@ -46,7 +48,9 @@ export function View() {
           />
         </div>
       ) : (
-        <PostContent>{viewPost.body}</PostContent>
+        <PostContent>
+          <Markdown rehypePlugins={[rehypeRaw]}>{viewPost.body}</Markdown>
+        </PostContent>
       )}
     </ViewContainer>
   )
