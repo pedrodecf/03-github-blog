@@ -13,6 +13,8 @@ import {
 } from './styles'
 import { Link } from 'react-router-dom'
 import { ThreeDots } from 'react-loader-spinner'
+import { formatDistanceToNow } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
 
 interface PostInfoProps {
   title?: string
@@ -61,7 +63,11 @@ export function PostInfo({
 
               <span>
                 <Calendar size={18} />
-                {date}
+                {date &&
+                  formatDistanceToNow(new Date(date), {
+                    addSuffix: true,
+                    locale: ptBR,
+                  })}
               </span>
 
               <span>

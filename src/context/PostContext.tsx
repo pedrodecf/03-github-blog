@@ -16,6 +16,8 @@ interface PostsProps {
 
 interface PostContextType {
   posts: PostsProps[]
+  search: string
+  SearchPost: (query: string) => void
 }
 
 export const PostContext = createContext({} as PostContextType)
@@ -26,26 +28,24 @@ interface PostProviderProps {
 
 export function PostProvider({ children }: PostProviderProps) {
   const [posts, setPosts] = useState<PostsProps[]>([])
+  const [search, setSearch] = useState<string>('')
 
-  // useEffect(() => {
-  //   api
-  //     .get(
-  //       'https://api.github.com/search/issues?q=%20repo:pedrodecf/github-blog',
-  //     )
-  //     .then(function (response) {
-  //       setPosts(response.data.items)
-  //     })
-  // }, [])
+  function SearchPost(query: string) {
+    setSearch(query)
+  }
 
-  //   api
-  //     .get(
-  //       'https://api.github.com/search/issues?q=%20repo:rocketseat-education/reactjs-github-blog-challenge',
-  //     )
-  //     .then(function (response) {
-  //       setPosts(response.data)
-  //     })
-  // }, [])
+  useEffect(() => {
+    api
+      .get(
+        `https://api.github.com/search/issues?q=${search}%20repo:rocketseat-education/reactjs-github-blog-challenge`,
+      )
+      .then(function (response) {
+        setPosts(response.data.items)
+      })
+  }, [search])
   return (
-    <PostContext.Provider value={{ posts }}>{children}</PostContext.Provider>
+    <PostContext.Provider value={{ posts, search, SearchPost }}>
+      {children}
+    </PostContext.Provider>
   )
 }

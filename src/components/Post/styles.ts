@@ -2,12 +2,21 @@ import styled from 'styled-components'
 
 export const PostContainer = styled.div`
   height: 16.25rem;
-  height: 16.25rem;
+  width: 49%;
   padding: 2rem;
   border-radius: 0.625rem;
   background: ${(props) => props.theme.post};
 
-  > p {
+  h2 {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  p {
     margin-top: 1.25rem;
     display: inline-block;
     color: ${(props) => props.theme.tex};

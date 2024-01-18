@@ -10,7 +10,8 @@ export const HomeContainer = styled.div`
 `
 
 export const PostsContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  max-width: 100%;
   gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
 `
