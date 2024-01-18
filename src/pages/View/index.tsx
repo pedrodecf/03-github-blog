@@ -3,6 +3,7 @@ import { PostContent, ViewContainer } from './styles'
 import { api } from '../../lib/axios'
 import { useParams } from 'react-router-dom'
 import { useState } from 'react'
+import { ThreeDots } from 'react-loader-spinner'
 
 interface ViewPostProps {
   html_url?: string
@@ -34,7 +35,19 @@ export function View() {
         title={viewPost.title}
         username={viewPost.user?.login}
       />
-      <PostContent>{viewPost.body}</PostContent>
+      {viewPost.body === undefined ? (
+        <div className="loadingBar">
+          <ThreeDots
+            height="80"
+            width="80"
+            radius="9"
+            color="#3294F8"
+            ariaLabel="three-dots-loading"
+          />
+        </div>
+      ) : (
+        <PostContent>{viewPost.body}</PostContent>
+      )}
     </ViewContainer>
   )
 }
